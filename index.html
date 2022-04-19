@@ -27,48 +27,68 @@
 
     var input = document.querySelector(".mensaje");
 	input.focus();
-
+    //transformo un var array para var string
     function arrayToString(array){
+
         var frase = array.join("");
         return frase;
         
     }
-    
+
+    //funcion para detectar no minusculas
+    function detectarNoMinusculas(array){
+        var i = 0;
+        while(i <= array.length){
+            var pattern = new RegExp("^(?=.*[a-z])");
+            if(pattern.test(array[i])){
+                i++
+            }else{
+                return false;
+                break;
+            }
+            return true;
+        }
+    }
+    //funcion para encriptar
     function encriptando(){
         var letras = [];
         if(input.value != "" ){
             letras = Array.from(input.value);
-            for(i = 0; i <= letras.length; i++){
-                if(letras[i] == "a"){
-                    letras[i] = "ai"
-                    }else{
-                        if(letras[i] == "e"){
-                        letras[i] = "enter"
+            if(detectarNoMinusculas(letras) == false){
+                alert("Existen mayúsculas, números o símbolos especiales en la frase.  Vuelva a ingresarla.")
+            }else{
+                //llamar funcion detectarMinusculas
+                for(var i = 0; i <= letras.length; i++){
+                    if(letras[i] == "a"){
+                        letras[i] = "ai"
                         }else{
-                            if(letras[i] == "i"){
-                            letras[i] = "imes"
+                            if(letras[i] == "e"){
+                            letras[i] = "enter"
                             }else{
-                                if(letras[i] == "o"){
-                                letras[i] = "ober"
+                                if(letras[i] == "i"){
+                                letras[i] = "imes"
                                 }else{
-                                    if(letras[i] == "u"){
-                                    letras[i] = "ufat"
+                                    if(letras[i] == "o"){
+                                    letras[i] = "ober"
+                                    }else{
+                                        if(letras[i] == "u"){
+                                        letras[i] = "ufat"
+                                        }
                                     }
                                 }
                             }
                         }
                     }
+            
+                    alert(arrayToString(letras));
                 }
-        
-            alert(arrayToString(letras));
-            }else{
-            alert("Escriba el mensaje...");
+            }
+            input.value = "";
+		    input.focus();
         }
 
-        input.value = "";
-		input.focus();
+  
         
-    }
 
     function desencriptando(){
         alert("Desencriptando");
