@@ -5,11 +5,80 @@
     <head>
 
         <meta charset="UTF-8">
-        <title>Barbería Alura</title>
+        <title>Encriptador</title>
         <link rel="stylesheet" href="style.css">
 
     </head>
 
     <body>
+        <h1>Encriptador</h1><br><br><br>
+
+        <input class="mensaje"><br><br><br>
+
+
+        <button class="encriptar">Encriptar</button>
+
+        <button class="desencriptar">Desencriptar</button>
+
+
     </body>
 </html>
+<script>
+
+    var input = document.querySelector(".mensaje");
+	input.focus();
+
+    function arrayToString(array){
+        var frase = array.join("");
+        return frase;
+        
+    }
+    
+    function encriptando(){
+        var letras = [];
+        if(input.value != "" ){
+            letras = Array.from(input.value);
+            for(i = 0; i <= letras.length; i++){
+                if(letras[i] == "a"){
+                    letras[i] = "ai"
+                    }else{
+                        if(letras[i] == "e"){
+                        letras[i] = "enter"
+                        }else{
+                            if(letras[i] == "i"){
+                            letras[i] = "imes"
+                            }else{
+                                if(letras[i] == "o"){
+                                letras[i] = "ober"
+                                }else{
+                                    if(letras[i] == "u"){
+                                    letras[i] = "ufat"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+        
+            alert(arrayToString(letras));
+            }else{
+            alert("Escriba el mensaje...");
+        }
+
+        input.value = "";
+		input.focus();
+        
+    }
+
+    function desencriptando(){
+        alert("Desencriptando");
+    }
+    alert(input)
+  
+
+    var botonEncriptar = document.querySelector(".encriptar");
+    botonEncriptar.onclick = encriptando;
+    var botonDesencriptar = document.querySelector(".desencriptar");
+    botonDesencriptar.onclick = desencriptando;
+
+</script>
