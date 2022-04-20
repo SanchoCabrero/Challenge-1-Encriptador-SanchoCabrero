@@ -13,14 +13,13 @@
     <body>
         <h1>Encriptador</h1><br><br><br>
 
-        <input class="mensaje"><br><br><br>
+        <input class="mensaje">
 
+        <textarea class="mensajeSalida" readonly></textarea><br><br><br>
 
         <button class="encriptar">Encriptar</button>
 
         <button class="desencriptar">Desencriptar</button>
-        
-        <textarea class="mensajeSalida" readonly></textarea>
 
         <button class="copiar">Copiar</button>
 
@@ -95,7 +94,7 @@
 		    input.focus();
         }
 
-    //función para desencriptar
+    //funcion para desencriptar
     function desencriptando(){
         var letras = [];
         if(input.value != "" ){
@@ -134,6 +133,7 @@
 		    input.focus();
         }
         
+    //funcion para copiar texto de salida
     function copiar(){
         var mensajeCopiado = document.querySelector(".mensajeSalida");
         mensajeCopiado.select();

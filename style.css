@@ -1,62 +1,127 @@
-.titulo-principal{
+body {
 
-padding-left: 30px;
+background: #E5E5E5;
 
 }
+.mensaje {
 
-#banner{
-    width: 100%;
-}
-
-.principal{
-
-    background: #CCCCCC;
-    padding: 20px;
-}
-
-.titulo-centralizado{
+    position: static;
+    width: 336px;
+    height: 48px;
+    left: 0px;
+    top: 74px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    /* or 24px */
+    
     text-align: center;
-}
-
-
-p{
-    text-align: center;
-}
-
-
-em strong{
-    color: red;
-}
-
-#mision{
-    font-size: 20px;
-}
-
-.diferenciales{
-
-    background: #FFFFFF;
-    padding: 30px;
+    
+    /* Gray/gray-400 */
+    
+    color: #495057;
+    
+    
+    /* Inside auto layout */
+    
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 16px 0px;
 
 }
 
+.encriptar {
 
-.items{
+    * Button */
 
-    font-style: italic; 
 
+    /* Auto layout */
+    
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 24px;
+    
+    position: static;
+    width: 328px;
+    height: 67px;
+    left: 0px;
+    top: 0px;
+    
+    /* Dark blue/dark-blue-300 */
+    
+    background: #0A3871;
+    border-radius: 24px;
+    
+    /* Inside auto layout */
+    
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 24px;
 }
 
-ul{
+.desencriptar {
 
-    display: inline-block;
-    vertical-align: top;
-    width: 20%;
-    margin-right: 15%;
-
-}
-
-.imagenDiferenciales{
-
-    width: 50%;
-
+    Color 
+    Light blue
+    State 
+    Normal
+    Width 
+    328px
+    Height 
+    67px
+    Left 
+    352px
+    Radius 
+    24px
+    Padding 
+    24px
+    Gap 
+    8px
+    Blend 
+    Pass through
+    Fixed width
+    Hug contents
+    #D8DFE8
+    1px
+    Inner border
+    Dark blue/dark-blue-300
+    #0A3871
+    /* Button */
+    
+    
+    /* Auto layout */
+    
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 24px;
+    
+    position: static;
+    width: 328px;
+    height: 67px;
+    left: 352px;
+    top: 0px;
+    
+    /* Light gray */
+    
+    background: #D8DFE8;
+    /* Dark blue/dark-blue-300 */
+    
+    border: 1px solid #0A3871;
+    box-sizing: border-box;
+    border-radius: 24px;
+    
+    /* Inside auto layout */
+    
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 0px 24px;
 }
