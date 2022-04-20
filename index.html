@@ -19,6 +19,10 @@
         <button class="encriptar">Encriptar</button>
 
         <button class="desencriptar">Desencriptar</button>
+        
+        <textarea class="mensajeSalida" readonly></textarea>
+
+        <button class="copiar">Copiar</button>
 
 
     </body>
@@ -27,6 +31,7 @@
 
     var input = document.querySelector(".mensaje");
 	input.focus();
+    var output = document.querySelector(".mensajeSalida");
 
     //funcion para transformar un var array para var string
     function arrayToString(array){
@@ -81,7 +86,7 @@
                         }
                     }
             
-                    alert(arrayToString(letras));
+                    output.value = (arrayToString(letras));
                 }
             }else{
                 alert("Escriba un mensaje...");
@@ -120,18 +125,30 @@
                         }
                     }
             
-                    alert(arrayToString(letras));
+                    output.value = (arrayToString(letras));
                 }
+            }else{
+                alert("Escriba un mensaje...");
             }
             input.value = "";
 		    input.focus();
         }
         
-    
+    function copiar(){
+        var mensajeCopiado = document.querySelector(".mensajeSalida");
+        mensajeCopiado.select();
+        mensajeCopiado.setSelectionRange(0, 99999);
+        navigator.clipboard.writeText(mensajeCopiado.value);
+    }
 
     var botonEncriptar = document.querySelector(".encriptar");
     botonEncriptar.onclick = encriptando;
+
     var botonDesencriptar = document.querySelector(".desencriptar");
     botonDesencriptar.onclick = desencriptando;
+
+    var botonCopiar = document.querySelector(".copiar");
+    botonCopiar.onclick = copiar;
+
 
 </script>
