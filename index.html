@@ -6,23 +6,38 @@
 
         <meta charset="UTF-8">
         <title>Encriptador</title>
+        <link rel="stylesheet" href="reset.css">
         <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
 
     </head>
 
     <body>
-        <h1>Encriptador</h1><br><br><br>
+        <header>
 
-        <input class="mensaje">
+            <h1 class="logo"><img src="imagenes/logo-alura.png" alt="Logo de alura"></h1>
 
-        <textarea class="mensajeSalida" readonly></textarea><br><br><br>
+        </header>
+        
+            <div class="entrada">
+                <input class="mensaje" placeholder="Ingrese texto aquí">
 
-        <button class="encriptar">Encriptar</button>
+                <img src="imagenes/exclamacion.png" class="simbolo"><p class="importante">Sólo letras minúsculas y sin acentos</p>
 
-        <button class="desencriptar">Desencriptar</button>
+                <button class="encriptar">Encriptar</button>
+    
+                <button class="desencriptar">Desencriptar</button>
+            </div>
 
-        <button class="copiar">Copiar</button>
+            <div class="salida">
+                <button class="copiar">Copiar</button>
 
+                <textarea class="mensajeSalida" readonly></textarea>
+
+            </div>
+               
 
     </body>
 </html>
