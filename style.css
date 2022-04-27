@@ -10,7 +10,6 @@ body {
     height: 48px;
     margin: 40px auto 20px 84px;
 }
-
 .mensaje{
     /*input*/
     position: absolute;
@@ -75,12 +74,13 @@ body {
 
 }
 .desencriptar{
+
     /*button*/
     position: absolute;
-    top: 885px;
-    left: 592px;
     width: 328px;
     height: 67px;
+    left: 592px;
+    top: 885px;
     background: #D8DFE8;
     border: 1px solid #0A3871;
     box-sizing: border-box;
@@ -94,7 +94,7 @@ body {
     text-align: center;
     color: #0A3871;
 }
-.mensajeSalida{
+.salida{
     position: absolute;
     width: 400px;
     height: 944px;
@@ -103,6 +103,12 @@ body {
     background: #FFFFFF;
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
     border-radius: 32px;
+}
+.mensajeSalida{
+    position: static;
+    width: 336px;
+    height: 781px;
+    margin: 32px 32px 32px 32px;
 
     /*text*/
     font-family: 'Inter';
@@ -114,14 +120,15 @@ body {
 }
 .copiar{
     /*button*/
-    position: absolute;
+    position: static;
     width: 336px;
     height: 67px;
-    left: 1032px;
-    top: 885px;
     border: 1px solid #0A3871;
     box-sizing: border-box;
     border-radius: 24px;
+    vertical-align: bottom;
+    margin: auto 32px 0px 32px;
+
 
     /*text*/
     font-family: 'Inter';
