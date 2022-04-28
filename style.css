@@ -1,24 +1,37 @@
 body {
-    position: relative;
-    width: 1440px;
-    height: 1024px;
+    
+    width: 100%;
+    height: 100%;
     background: #F3F5FC;
     font-family: 'Inter', sans-serif;
 }
-.logo{
+
+header{
     width: 120px;
     height: 48px;
-    margin: 40px auto 20px 84px;
+    margin: 40px 0px 30px 84px;
+}
+main{
+    width: 100%;
+    height: 80%;
+}
+.entrada{
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    height: 100%;
+    margin-left:150px;
 }
 .mensaje{
     /*input*/
     position: absolute;
-    width: 577px;
+    box-sizing: border-box;
+    display: block;
+    width: auto;
     height: 48px;
-    top: 168px;
-    left: 240px;
     border: none;
     background: #F3F5FC;
+    margin-bottom: 25%;
 
     /*input text*/
 
@@ -27,24 +40,26 @@ body {
     font-size: 32px;
     line-height: 150%;
     color: #0A3871;
+}
+.informacion{
+    display: inline;
+    position: absolute;
+    top: 75%;
+    margin-left: 15px;
 
-    /*auto layout*/
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 0px;
 }
 .simbolo{
-    position: absolute;
-    top: 852px;
-    left: 240px;
+    display: inline-block;
     width: 16px;
     height: 16px;
+    vertical-align: top;
+    margin-top: 1px;
+
 }
 .importante{
-    position: absolute;
-    top: 851px;
-    left: 264px;
+    display: inline-block;
+
+    /*text*/
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
@@ -53,53 +68,50 @@ body {
 
 }
 
-.encriptar{
-    /*button*/
+.entrada button{
     position: absolute;
-    top: 885px;
-    left: 240px;
+    top: 80%;
+    display: inline-block;
+    padding: 24px;
+    vertical-align: top;
     width: 328px;
-    height: 67px;
-    background: #0A3871;
-    border-radius: 24px;
+    height: 67px;    box-sizing: border-box;
+    margin: 0 6px;
 
-    /*button text*/
+    /*text*/
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
     text-align: center;
+
+}
+.encriptar{
+    /*button*/
+    background: #0A3871;
+    border-radius: 24px;
+
+    /*button text*/
     color: #FFFFFF;
 
 }
 .desencriptar{
-
     /*button*/
-    position: absolute;
-    width: 328px;
-    height: 67px;
-    left: 592px;
-    top: 885px;
+    left: 500px;
     background: #D8DFE8;
     border: 1px solid #0A3871;
-    box-sizing: border-box;
     border-radius: 24px;
 
     /*text*/
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    text-align: center;
     color: #0A3871;
 }
 .salida{
-    position: absolute;
+    display: inline-block;
+    position: relative;
     width: 400px;
-    height: 944px;
-    left: 1000px;
-    top: 40px;
+    height: 100%;
+
     background: #FFFFFF;
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
     border-radius: 32px;
@@ -107,8 +119,9 @@ body {
 .mensajeSalida{
     position: static;
     width: 336px;
-    height: 781px;
-    margin: 32px 32px 32px 32px;
+    height: 70%;
+    margin: 32px 32px 40px 32px;
+    border: none;
 
     /*text*/
     font-family: 'Inter';
@@ -127,7 +140,7 @@ body {
     box-sizing: border-box;
     border-radius: 24px;
     vertical-align: bottom;
-    margin: auto 32px 0px 32px;
+    margin: auto 32px auto 32px;
 
 
     /*text*/
