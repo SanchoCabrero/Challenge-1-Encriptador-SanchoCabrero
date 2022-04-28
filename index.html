@@ -22,7 +22,7 @@
         </header>
         <main>
             <div class="entrada">
-                <input class="mensaje" placeholder="Ingrese texto aquí">
+                <textarea class="mensaje" placeholder="Ingresa el texto aquí..."></textarea>
                 
                     <div class="informacion">
                         <img src="imagenes/exclamacion.png" class="simbolo">
@@ -36,8 +36,9 @@
             </div>
 
             <div class="salida">
-                <textarea class="mensajeSalida" readonly></textarea>
-
+                <textarea class="mensajeSalida" readonly placeholder=" "></textarea>
+                <p class="noEncontrado">Ningún mensaje fue encontrado</p>
+                <p class="ingresa">Ingresa el texto que desees encriptar o desencriptar.</p>
                 <button class="copiar">Copiar</button>
             </div>
         </main>      
@@ -49,6 +50,8 @@
     var input = document.querySelector(".mensaje");
 	input.focus();
     var output = document.querySelector(".mensajeSalida");
+    var noEncontrado = document.querySelector(".noEncontrado");
+    var ingresa = document.querySelector(".ingresa");
 
     //funcion para transformar un var array para var string
     function arrayToString(array){
@@ -102,11 +105,14 @@
                             }
                         }
                     }
-            
+                    noEncontrado.style.display = "none";
+                    ingresa.style.display = "none";
                     output.value = (arrayToString(letras));
                 }
             }else{
-                alert("Escriba un mensaje...");
+                noEncontrado.style.display = "block";
+                ingresa.style.display = "block";
+                output.value = "";
             }
             input.value = "";
 		    input.focus();
@@ -141,11 +147,14 @@
                             }
                         }
                     }
-            
+                    noEncontrado.style.display = "none";
+                    ingresa.style.display = "none";
                     output.value = (arrayToString(letras));
                 }
             }else{
-                alert("Escriba un mensaje...");
+                noEncontrado.style.display = "block";
+                ingresa.style.display = "block";
+                output.value = "";
             }
             input.value = "";
 		    input.focus();
