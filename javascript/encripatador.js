@@ -83,6 +83,7 @@ var botonCopiar = document.querySelector(".copiar");
     //funcion para desencriptar
     function desencriptando(){
         var letras = [];
+        var encriptada = 1;
         if(input.value != "" ){
             letras = Array.from(input.value);
             if(detectarNoMinusculas(letras)){
@@ -90,33 +91,71 @@ var botonCopiar = document.querySelector(".copiar");
             }else{
                 for(var i = 0; i <= letras.length; i++){
                     if(letras[i] == "a"){
-                        letras.splice(i+1,1);
+                        if(chequearEncriptacionA(letras,i)){
+                            letras.splice(i+1,1);
+                            }else{
+                                alert("La frase no se encuentra debidamente encriptada. Chequeela y vuelva a ingresarla.");
+                                encriptada = 0;
+                                break;
+                            }
+                        
                         }else{
                             if(letras[i] == "e"){
-                                letras.splice(i+1,4);
+                                if(chequearEncriptacionE(letras,i)){
+                                    letras.splice(i+1,4);
+                                }else{
+                                    alert("La frase no se encuentra debidamente encriptada. Chequeela y vuelva a ingresarla.");
+                                    encriptada = 0;
+                                    break;
+                                }
                             }else{
                                 if(letras[i] == "i"){
-                                    letras.splice(i+1,3);
-                                }else{
-                                    if(letras[i] == "o"){
+                                    if(chequearEncriptacionI(letras,i)){
                                         letras.splice(i+1,3);
                                     }else{
-                                        if(letras[i] == "u"){
+                                        alert("La frase no se encuentra debidamente encriptada. Chequeela y vuelva a ingresarla.");
+                                        encriptada = 0;
+                                        break;
+                                    }
+                                }else{
+                                    if(letras[i] == "o"){
+                                        if(chequearEncriptacionO(letras,i)){
                                             letras.splice(i+1,3);
+                                        }else{
+                                            alert("La frase no se encuentra debidamente encriptada. Chequeela y vuelva a ingresarla.");
+                                            encriptada = 0;
+                                            break;
+                                        }
+                                    }else{
+                                        if(letras[i] == "u"){
+                                            if(chequearEncriptacionU(letras,i)){
+                                                letras.splice(i+1,3);
+                                            }else{
+                                                alert("La frase no se encuentra debidamente encriptada. Chequeela y vuelva a ingresarla.");
+                                                encriptada = 0;
+                                                break; 
+                                            }
                                         }
                                     }
                                 }
                             }
                         }
                     }
-                    noEncontrado.style.display = "none";
-                    ingresa.style.display = "none";
-                    if (window.screen.width < 1050){
-                    output.style.display = "block"
-                    botonCopiar.style.display ="block"
-                }
-                    output.value = (arrayToString(letras));
-                    output.focus();
+                    if(encriptada == 1){
+                        noEncontrado.style.display = "none";
+                        ingresa.style.display = "none";
+                        if (window.screen.width < 1050){
+                            output.style.display = "block"
+                            botonCopiar.style.display ="block"
+                        }
+                        output.value = (arrayToString(letras));
+                        output.focus();
+                    }else{
+                        noEncontrado.style.display = "block";
+                        ingresa.style.display = "block"
+                        output.value = "";
+                    }
+
                 }
             }else{
                 if (window.screen.width < 1050){
