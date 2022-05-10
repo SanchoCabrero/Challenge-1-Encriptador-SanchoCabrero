@@ -151,6 +151,10 @@ var botonCopiar = document.querySelector(".copiar");
                         output.value = (arrayToString(letras));
                         output.focus();
                     }else{
+                        if (window.screen.width < 1050){
+                            output.style.display = "none"
+                            botonCopiar.style.display ="none"
+                        }
                         noEncontrado.style.display = "block";
                         ingresa.style.display = "block"
                         output.value = "";
